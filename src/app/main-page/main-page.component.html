@@ -1,0 +1,5 @@
+<h1>Products: </h1>
+<div>{{productsData.count_products}} available</div>
+<h2>Filter by name: {{filterText}}</h2>
+<input type="text" (input) = "inputHandler($event)">
+<app-product-item *ngFor="let product of filteredProducts" [productItem]="product"></app-product-item>
