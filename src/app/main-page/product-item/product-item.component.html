@@ -1,0 +1,38 @@
+<div class="item-container">
+  <h2>{{productItem.name}}</h2>
+  <div class="item-info-container">
+    <div>
+      <div *ngIf="productItem.brand_class">Brand class: {{productItem.brand_class}}</div>
+      <div>Brand: {{productItem.brand}}</div>
+      <div>BRS category: {{productItem.bsr_category}}</div>
+      <div>BRS: {{productItem.bsr_value}}</div>
+      <div>Asin: {{productItem.asin}}</div>
+      <div class="img"><img class="product-img" [src]=productItem.img></div>
+    </div>
+    <div>
+      <div>Price: {{productItem.price}} $</div>
+      <div>
+        <div class="stars-container">
+          <div [ngClass]="{star:true,selected:starRating[0]}"></div>
+          <div [ngClass]="{star:true,selected:starRating[1]}"></div>
+          <div [ngClass]="{star:true,selected:starRating[2]}"></div>
+          <div [ngClass]="{star:true,selected:starRating[3]}"></div>
+          <div [ngClass]="{star:true,selected:starRating[4]}"></div>
+        </div>
+        <div>Votes number: {{productItem.votes_count}}</div>
+      </div>
+      <div>Last update: {{convertDate(productItem.updated_at)}}</div>
+      <div>In potential products: {{(productItem.in_potential_products) ? 'Yes' : 'No'}}</div>
+      <div>Weight: {{productItem.weight}}</div>
+      <div *ngIf="productItem.shipping_weight">Shipping weight: {{productItem.shipping_weight}}</div>
+      <div>Domain: {{productItem.domain}}</div>
+      <div>Daily cashFlow: {{productItem.daily_cashflow}}</div>
+      <div>Currency: {{productItem.currency}}</div>
+      <div>Daily sales: {{productItem.daily_sales}}</div>
+      <div>Sizes:</div>
+      <div *ngFor="let s of productItem.size">{{s}}</div>
+      <div>Link: <a [href]="productItem.link">Check on site</a></div>
+    </div>
+  </div>
+
+</div>
