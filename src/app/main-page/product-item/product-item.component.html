@@ -1,5 +1,5 @@
 <div class="item-container">
-  <h2>{{productItem.name}}</h2>
+  <h3>{{productItem.name}}</h3>
   <div class="item-info-container">
     <div>
       <div *ngIf="productItem.brand_class">Brand class: {{productItem.brand_class}}</div>
@@ -21,7 +21,7 @@
         </div>
         <div>Votes number: {{productItem.votes_count}}</div>
       </div>
-      <div>Last update: {{convertDate(productItem.updated_at)}}</div>
+      <div>Last update: {{convertDate(productItem.updated_at) | date:'yyyy-MM-dd'}}</div>
       <div>In potential products: {{(productItem.in_potential_products) ? 'Yes' : 'No'}}</div>
       <div>Weight: {{productItem.weight}}</div>
       <div *ngIf="productItem.shipping_weight">Shipping weight: {{productItem.shipping_weight}}</div>

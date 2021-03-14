@@ -1,5 +1,6 @@
 .item-container {
-  min-height: 1020px;
+  background-color: aliceblue;
+  min-height: 1000px;
   max-width: 400px;
   margin: 5px auto;
   padding: 10px;
@@ -11,7 +12,7 @@
 }
 
 .product-img {
-  height: 400px;
+  width: 60%;
 }
 .stars-container {
   height: 30px;
