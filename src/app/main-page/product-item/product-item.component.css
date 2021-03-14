@@ -1,0 +1,43 @@
+.item-container {
+  background-color: aliceblue;
+  min-height: 1000px;
+  max-width: 400px;
+  margin: 5px auto;
+  padding: 10px;
+  border: 1px solid black;
+}
+.img {
+  height: auto;
+  max-width: 100%;
+}
+
+.product-img {
+  width: 60%;
+}
+.stars-container {
+  height: 30px;
+  margin: 5px auto;
+  display: flex;
+  justify-content: center;
+}
+.star {
+  height: 25px;
+  width: 25px;
+  margin: 2px;
+  background-color: grey;
+  clip-path: polygon(
+    50% 0%,
+    63% 38%,
+    100% 38%,
+    69% 59%,
+    82% 100%,
+    50% 75%,
+    18% 100%,
+    31% 59%,
+    0% 38%,
+    37% 38%
+  );
+}
+.star.selected {
+  background-color: gold;
+}
