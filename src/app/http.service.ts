@@ -1,11 +1,15 @@
 import {Observable} from "rxjs";
 import {IProductsData} from "./main-page/main-page.component";
-import {HttpClient} from '@angular/common/http';
+import {Injectable} from "@angular/core";
+import {HttpClient} from "@angular/common/http";
 
+@Injectable({
+  providedIn: "root"
+})
+export class HttpService {
+  constructor(private http: HttpClient) {}
 
-export class HttpService{
-    public getProducts(){
-      // @ts-ignore
-     return this.http.get("https://demo3062546.mockable.io/products").subscribe((data: IProductsData) => data)
-    }
+  public getProducts():Observable<any> {
+    return this.http.get("https://demo3062546.mockable.io/products")
+  }
 }

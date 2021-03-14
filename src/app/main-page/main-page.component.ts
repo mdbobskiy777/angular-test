@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {HttpService} from "../http.service";
 
 
@@ -50,16 +49,15 @@ export class MainPageComponent implements OnInit {
   productsData!: IProductsData
   filteredProducts!: IProduct[]
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpService) {
+
   }
 
   ngOnInit(): void {
 
-    // @ts-ignore
-    this.http.get("https://demo3062546.mockable.io/products").subscribe((data: IProductsData) => {
-
-      this.productsData = data;
-      this.filteredProducts = this.productsData.products;
+    this.http.getProducts().subscribe((data: IProductsData) => {
+      this.productsData = data
+      this.filteredProducts = this.productsData.products
 
     })
 
@@ -76,4 +74,5 @@ export class MainPageComponent implements OnInit {
     this.filteredProducts = this.nameFilter(this.filterText)
 
   }
+
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
 import {IProduct} from "../main-page.component";
 
 @Component({
@@ -18,18 +18,23 @@ export class ProductItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ngOnChanges():void {
+  ngOnChanges(changes: SimpleChanges): void {
 
-    for (let i = 1; i <= 5; i++)
+    if (changes.productItem) {
+      for (let i = 1; i <= 5; i++)
 
-      if (i < this.productItem.stars) {
+        if (i < changes.productItem.currentValue.stars) {
 
-        this.starRating[i-1] = true
+          this.starRating[i - 1] = true
 
-      }
+        }
+    }
+
   }
 
-  convertDate(date:number):Date {
+  convertDate(date: number): Date {
+
     return new Date(date)
-}
+
+  }
 }
